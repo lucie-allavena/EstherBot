@@ -13,17 +13,7 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-            return bot.say('*Un petit robot étrange... comme un assemblage de morceaux de codes éparses... un post-it sur le front "Parlez bot"')
-                .then(() => 'askName');
-        }
-    },
-
-    askName: {
-        prompt: (bot) => bot.say('Quel est ton nom ?'),
-        receive: (bot, message) => {
-            const name = message.text;
-            return bot.setProp('name', name)
-                .then(() => bot.say(`Très bien, je vais t\'appeler ${name} dans ce cas... C\'est un joli nom, enfin, j\'imagine^^'`))
+            return bot.say('Oh, tu veux discuter avec mon bot personnel ? Dis-lui juste BOT ;) ')
                 .then(() => 'speak');
         }
     },
@@ -54,7 +44,7 @@ module.exports = new Script({
                 }
 
                 if (!_.has(scriptRules, upperText)) {
-                    return bot.say(`Je ne suis qu'un BOT, qu'un reflet... Je ne comprends pas tout, utilise des mots simples, ou les boutons proposés. Il faut parler BOT en fait`).then(() => 'speak');
+                    return bot.say(`Je ne suis qu'un BOT, qu'un reflet... Je ne comprends pas tout, utilise des mots simples, ou les boutons proposés`).then(() => 'speak');
                 }
 
                 var response = scriptRules[upperText];
