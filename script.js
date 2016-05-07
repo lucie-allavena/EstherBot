@@ -57,7 +57,7 @@ module.exports = new Script({
                         console.log(line);
                         return bot.say(line);
                     });
-                })
+                });
 
                 return p.then(() => 'speak');
             }
