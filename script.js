@@ -14,21 +14,16 @@ module.exports = new Script({
     start: {
         receive: (bot) => {
             return bot.say('*Un robot inanimé, un post-it collé sur sa tête marqué "Parlez BOT"*')
-                .then(() => 'askName');
+                .then(() => 'speak');
         }
     },
     askName: {
-          receive: (bot, message) => {
-            let upperText = message.text.trim().toUpperCase();
-            function updateSilent() {
-                switch (upperText) {
-                    case "BOT": 
-                        return bot.say('*Ses yeux s\'ouvrent, rond et perplexe* \n Je suis le bot personnel de Maxime, et toi qui es-tu ?'),
-           receive: (bot, message) => {
-                const name = message.text;
-                return bot.setProp('name', name)
-                    .then(() => bot.say(`Great! I'll call you ${name}... C'est un joli prénom ! \n Enfin, c'est ce que les gens disent, je ne saurais juger...`))
-                    .then(() => 'speak');
+        prompt: (bot) => bot.say('What\'s your name?'),
+        receive: (bot, message) => {
+            const name = message.text;
+            return bot.setProp('name', name)
+                .then(() => bot.say(`Great! I'll call you ${name}`))
+                .then(() => 'finish');
         }
     },
     speak: {
@@ -38,7 +33,6 @@ module.exports = new Script({
 
             function updateSilent() {
                 switch (upperText) {
-                    case "BOT": 
                     case "CONNECT ME":
                         return bot.setProp("silent", true);
                     case "DISCONNECT":
