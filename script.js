@@ -12,7 +12,14 @@ module.exports = new Script({
     },
 
     start: {
-        prompt: (bot) => bot.say('*Un robot inanimé posé sur une table* \n *Des larges yeux perplexes s\'ouvrent à votre passage* \n Qui êtes-vous ?'),
+        receive: (bot) => {
+            return bot.say('*Un robot inanimé posé sur une table* \n *Des larges yeux perplexes s\'ouvrent à votre passage* \n Bonjour, je suis Mixam, le bot personnel de Maxime')
+                .then(() => 'askName');
+        }
+    },
+
+    askName: {
+        prompt: (bot) => bot.say('Qui êtes-vous ?'),
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
