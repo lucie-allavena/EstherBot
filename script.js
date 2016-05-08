@@ -27,6 +27,10 @@ module.exports = new Script({
                 .then(() => 'speak');
         }
     },
+    error: {
+        prompt: (bot) => bot.say('*Ses yeux s\'éteignent, il a l\'air de bugger*'),
+        receive: () => 'start'
+    }
     speak: {
         prompt: (bot) => bot.say('Avant de commencer à discuter, je dois te prévenir... je ne suis pas un humain, je suis un bot, je ne suis qu\'une illusion, à peine le reflet de celui qui m\'a créé... Je comprends les mots-clés, mais les phrases m\'échappent... \n Mais ne t\'inquiètes pas ${name} , on va bien arriver à discuter :) '),
         receive: (bot, message) => {
