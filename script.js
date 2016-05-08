@@ -12,18 +12,12 @@ module.exports = new Script({
     },
 
     start: {
-        receive: (bot) => {
-            return bot.say('*Un robot inanimé, un post-it collé sur sa tête marqué "Parlez BOT"*')
-                .then(() => 'speak');
-        }
-    },
-    askName: {
-        prompt: (bot) => bot.say('What\'s your name?'),
+        prompt: (bot) => bot.say('*Un robot inanimé posé sur une table* \n *Des larges yeux perplexes s\'ouvrent à votre passage* \n Qui êtes-vous ?'),
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(`Great! I'll call you ${name}`))
-                .then(() => 'finish');
+                .then(() => bot.say(` ${name}... C'est un joli nom ! \n Enfin, c\'est ce que l'on m'a dit de dire. Je ne saurais juger^^'`))
+                .then(() => 'speak');
         }
     },
     speak: {
