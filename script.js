@@ -7,13 +7,13 @@ const scriptRules = require('./script.json');
 
 module.exports = new Script({
     processing: {
-        //prompt: (bot) => bot.say('Hhhmmm...'),
+        //prompt: (bot) => bot.say('Hhhmm...'),
         receive: () => 'processing'
     },
 
     start: {
         receive: (bot) => {
-            return bot.say('Oh, tu veux discuter avec mon bot personnel ? Dis-lui juste BOT ;) ')
+            return bot.say('*Un robot inanimé, un post-it marqué "Parlez BOT"*')
                 .then(() => 'speak');
         }
     },
@@ -57,7 +57,7 @@ module.exports = new Script({
                         console.log(line);
                         return bot.say(line);
                     });
-                });
+                })
 
                 return p.then(() => 'speak');
             }
