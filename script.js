@@ -28,11 +28,11 @@ module.exports = new Script({
         }
     },
     error: {
-        prompt: (bot) => bot.say('*Ses yeux s\'éteignent, il a l\'air de bugger*'),
+        prompt: (bot) => bot.say(` Désolé ${name}... Je ne suis qu\'un BOT, qu\'un reflet... Je ne comprends pas tout, utilise des mots simples, ou les boutons proposé`),
         receive: () => 'speak'
     },
     speak: {
-        prompt: (bot) => bot.say('Avant de commencer à discuter, je dois te prévenir... je ne suis pas un humain, je suis un bot, je ne suis qu\'une illusion, à peine le reflet de celui qui m\'a créé... Je comprends les mots-clés, mais les phrases m\'échappent... \n Mais ne t\'inquiètes pas ${name} , on va bien arriver à discuter :) '),
+        prompt: (bot) => bot.say(`Avant de commencer à discuter, je dois te prévenir, je comprends les mots-clés, mais les phrases m\'échappent... \n Mais ne t\'inquiètes pas ${name} , on va bien arriver à discuter :) `),
         receive: (bot, message) => {
 
             let upperText = message.text.trim().toUpperCase();
