@@ -1,7 +1,7 @@
 {
-    "BOT": "Je suis le bot personnel de Maxime, il m'a chargé de lui trouver du boulot en communication et en innovation. \n Ma conversation est un peu laborieuse mais j'ai une bonne mémoire, et je peux vous parler de lui :) \n![maxime](https://raw.githubusercontent.com/MaximeNialiv/EstherBot/master/img/maxime.jpg)\n Que voulez-vous faire ? On peut discuter tranquillement, où je peux vous parler de Maxime, j'ai été créé pour ça après tout :) %[Discutons un peu...](postback:discutons_un_peu) %[Parlons de ton createur](postback:I_LOVE_YOU)",
+    "BOT": "Je suis le bot personnel de Maxime, il m'a chargé de lui trouver du boulot en communication et en innovation. \n Ma conversation est un peu laborieuse mais j'ai une bonne mémoire, et je peux vous parler de lui :) \n![maxime](https://raw.githubusercontent.com/MaximeNialiv/EstherBot/master/img/maxime.jpg)\n Que voulez-vous faire ? On peut discuter tranquillement, où je peux vous parler de Maxime, j'ai été créé pour ça après tout :) %[Discutons un peu...](postback:DISCUTONS) %[Parlons de ton createur](postback:I_LOVE_YOU)",
     "Discutons un peu...": "Do you want to learn about ESTHER or learn HOW to get your own bot? Say either the keyword ESTHER or HOW to get started. Fyi, I only respond to keywords.",
-    "Discutons_un_peu": "Ah ça... les tirets...",
+    "DISCUTONS": "Ah ça... les tirets...",
     "CONNECT ME": "",
     "DISCONNECT": "Roger that, EstherBot is back."
 }
