@@ -13,17 +13,17 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-            return bot.say('*Un robot inanimé posé sur une table* \n *Des larges yeux perplexes s\'ouvrent à votre passage*')
+            return bot.say(`*Un robot inanimé posé sur une table* \n *Des larges yeux perplexes s'ouvrent à votre passage* \n Je suis le bot personnel de Maxime, un jeune-diplômé en communication et innovation, il m'a chargé de discuter à sa place. \n![maxime](https://raw.githubusercontent.com/MaximeNialiv/EstherBot/master/img/maxime.jpg)`)
                 .then(() => 'askName');
         }
     },
 
     askName: {
-        prompt: (bot) => bot.say('Qui êtes-vous ?'),
+        prompt: (bot) => bot.say(`Puis-je connaître ton nom avant de commencer ?`),
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(` ${name}... C'est un joli nom ! \n Enfin, c\'est ce que l'on m'a dit de dire. Je ne saurais juger^^'\n De quoi tu veux parler ? On peut discuter tranquillement, où je peux vous parler de Maxime, j'ai été créé pour ça après tout :) %[BOT](postback:DISCONNECT) %[C'est bien d'être un bot ?](postback:DISCUTONS) %[Discutons](postback:I_LOVE_YOU)`))
+                .then(() => bot.say(` ${name}... C'est un joli nom ! \n Enfin, c'est ce que l'on m'a dit de dire. Je ne saurais juger^^'\n Ma conversation est un peu laborieuse, vous ne pouvez me répondre qu'au moyen des mots en capitales, allez-y parlez BOT pour voir :) \n`))
                 .then(() => 'speak');
         }
     },
