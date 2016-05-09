@@ -23,7 +23,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(` ${name}... C'est un joli nom ! \n Enfin, c\'est ce que l'on m'a dit de dire. Je ne saurais juger^^'\n Que veux-tu faire du coup ? On peut discuter tranquillement, où je peux vous parler de Maxime, j'ai été créé pour ça après tout :) %[C\'est bien d'être un bot ?](postback:DISCUTONS) %[Discutons](postback:I_LOVE_YOU)`))
+                .then(() => bot.say(` ${name}... C'est un joli nom ! \n Enfin, c\'est ce que l'on m'a dit de dire. Je ne saurais juger^^'\n Que veux-tu faire du coup ? On peut discuter tranquillement, où je peux vous parler de Maxime, j'ai été créé pour ça après tout :) %[C'est bien d'être un bot ?](postback:DISCUTONS) %[Discutons](postback:I_LOVE_YOU)`))
                 .then(() => 'speak');
         }
     },
