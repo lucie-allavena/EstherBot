@@ -13,7 +13,7 @@ module.exports = new Script({
 
     start: {
         receive: (bot) => {
-            return bot.say(`*Un robot inanimé posé sur une table* \n *Des larges yeux perplexes s'ouvrent à votre passage* \n Je suis le bot personnel de Maxime, un jeune-diplômé en communication et innovation, il m'a chargé de discuter à sa place. \n![maxime](https://raw.githubusercontent.com/MaximeNialiv/EstherBot/master/img/maxime.jpg)`)
+            return bot.say(`*Un robot inanimé posé sur une table* \n *Des larges yeux perplexes s'ouvrent à votre passage* \n Je suis le bot personnel de Maxime, un jeune-diplômé en communication et innovation, il m'a chargé de discuter à sa place. \n ![maxime](https://raw.githubusercontent.com/MaximeNialiv/EstherBot/master/img/maxime.jpg)`)
                 .then(() => 'askName');
         }
     },
