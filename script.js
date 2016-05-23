@@ -84,17 +84,35 @@ module.exports = new Script({
     shifumi: {
         receive: (bot, message) => {
             let upperText = message.text.trim().toUpperCase();
-            function updateSilent() {
-                switch (upperText) {
-                    case "PAPIER ": if (choice1 === "CISEAUX"){return bot.say (`scissors wins`); }else{return bot.say (`paper wins`);};
-                    case "CAILLOU": if (choice1 === "CISEAUX"){return bot.say (`rocks wins`); }else {return bot.say (`paper wins`);};
-                    case "CISEAUX": if (choice1 === "PAPIER "){return bot.say (`scissors wins`);}else{return bot.say (`rocks wins`);};
+            function processMessage() {
+                var computerChoice = Math.random();
+                    if (computerChoice < 0.34) {computerChoice = "PAPIER";
+                    } else if(computerChoice <= 0.67) {computerChoice = "CAILLOU";
+                    } else {computerChoice = "CISEAUX";
+                };
+            }
+            case "PAPIER ": 
+                if (computerChoice === "CISEAUX"){
+                    return bot.say (`scissors wins`); 
+                }else{
+                    return bot.say (`paper wins`);
+                };
+            case "CAILLOU": 
+                if (computerChoice === "CISEAUX"){
+                    return bot.say (`rocks wins`); 
+                }else {
+                    return bot.say (`paper wins`);
+                };
+            case "CISEAUX": 
+                if (computerChoice === "PAPIER "){
+                    return bot.say (`scissors wins`);
+                }else{
+                    return bot.say (`rocks wins`);
+                    
+                };
                 }
             }
-            function processMessage(isSilent) {
-                var computerChoice = Math.random();
-                    if (computerChoice < 0.34) {computerChoice = "PAPIER";} else if(computerChoice <= 0.67) {computerChoice = "CAILLOU";} else {computerChoice = "CISEAUX";};
-            }
+            
         }
     },
 });
