@@ -81,7 +81,7 @@ module.exports = new Script({
                 .then(processMessage);
         }
     }
-    shifumi: {
+    /* shifumi: {
         receive: (bot, message) => {
             let upperText = message.text.trim().toUpperCase();
             function processMessage() {
@@ -114,5 +114,5 @@ module.exports = new Script({
             }
             
         }
-    },
+    }, */
 });
